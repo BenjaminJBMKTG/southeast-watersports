@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -22,7 +21,7 @@
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="paddleboarding.html" class="nav-link active">Paddleboarding</a></li>
                 <li><a href="kayaking.html" class="nav-link">Kayaking</a></li>
-                <li><a href="https://fareharbor.com/embeds/book/epiclife/?full-items=yes" class="nav-link btn-primary fareharbor-calendar-overlay">Book Now</a></li>
+                <li><a href="#" class="nav-link btn-primary" onclick="openBookingModal('general');return false;">Book Now</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
                 <span></span>
@@ -76,7 +75,7 @@
                             <li>Explore scenic routes</li>
                             <li>No experience needed</li>
                         </ul>
-                        <a href="https://fareharbor.com/embeds/book/epiclife/?full-items=yes" class="btn btn-primary fareharbor-calendar-overlay">Book Now</a>
+                        <button class="btn btn-primary" onclick="openBookingModal('general')">Book Now</button>
                     </div>
                 </div>
 
@@ -94,7 +93,7 @@
                             <li>Peaceful, mindful practice</li>
                             <li>All equipment provided</li>
                         </ul>
-                        <a href="https://fareharbor.com/embeds/book/epiclife/?full-items=yes" class="btn btn-primary fareharbor-calendar-overlay">Book Now</a>
+                        <button class="btn btn-primary" onclick="openBookingModal('general')">Book Now</button>
                     </div>
                 </div>
 
@@ -112,7 +111,7 @@
                             <li>Minimum 6, maximum 12 people</li>
                             <li>Suitable for all abilities</li>
                         </ul>
-                        <a href="https://fareharbor.com/embeds/book/epiclife/items/239305/?full-items=yes&amp;flow=554777" class="btn btn-primary">Book Now</a>
+                        <button class="btn btn-primary" onclick="openBookingModal('mega-sup')">Book Now</button>
                     </div>
                 </div>
 
@@ -130,7 +129,7 @@
                             <li>Longer distances covered</li>
                             <li>More challenging conditions</li>
                         </ul>
-                        <a href="https://fareharbor.com/embeds/book/epiclife/?full-items=yes" class="btn btn-primary fareharbor-calendar-overlay">Book Now</a>
+                        <button class="btn btn-primary" onclick="openBookingModal('progression')">Book Now</button>
                     </div>
                 </div>
 
@@ -155,7 +154,7 @@
             <div class="cta-content fade-in">
                 <h2>Ready to Get on the Water?</h2>
                 <p>Book your paddleboarding session today and discover why SUP is the UK's favourite watersport.</p>
-                <a href="https://fareharbor.com/embeds/book/epiclife/?full-items=yes" class="btn btn-primary btn-large fareharbor-calendar-overlay">Book Your SUP Session</a>
+                <button class="btn btn-primary btn-large" onclick="openBookingModal('general')">Book Your SUP Session</button>
                 <p style="margin-top:18px;font-size:1.05rem;">Or call us: <a href="tel:07377184505" style="color:var(--text-light);font-weight:600;border-bottom:2px solid rgba(255,255,255,0.4);">07377 184505</a></p>
             </div>
         </div>
@@ -175,7 +174,7 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="paddleboarding.html">Paddleboarding</a></li>
                         <li><a href="kayaking.html">Kayaking</a></li>
-                        <li><a href="https://fareharbor.com/embeds/book/epiclife/?full-items=yes" class="fareharbor-calendar-overlay">Book Now</a></li>
+                        <li><a href="#" onclick="openBookingModal('general');return false;">Book Now</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -193,6 +192,60 @@
         </div>
     </footer>
 
+    <!-- Booking Modal -->
+    <div class="booking-modal" id="bookingModal">
+        <div class="booking-modal-backdrop" onclick="closeBookingModal()"></div>
+        <div class="booking-modal-content">
+            <button class="booking-modal-close" onclick="closeBookingModal()">&times;</button>
+            <h2 class="booking-modal-title" id="bookingModalTitle">Book Your Session</h2>
+            <div class="booking-modal-calendar" id="bookingModalCalendar"></div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
+    <script>
+    var calendarConfigs = {
+        'general': {
+            title: 'Book Your Session',
+            src: 'https://fareharbor.com/embeds/script/calendar/epiclife/?fallback=simple&full-items=yes'
+        },
+        'mega-sup': {
+            title: 'Book Mega SUP',
+            src: 'https://fareharbor.com/embeds/script/calendar/epiclife/items/239305/?fallback=simple&full-items=yes&flow=554777'
+        },
+        'progression': {
+            title: 'Book Progression Session',
+            src: 'https://fareharbor.com/embeds/script/calendar/epiclife/?fallback=simple&full-items=yes&flow=1581599'
+        }
+    };
+
+    function openBookingModal(type) {
+        var config = calendarConfigs[type] || calendarConfigs['general'];
+        var modal = document.getElementById('bookingModal');
+        var title = document.getElementById('bookingModalTitle');
+        var calendar = document.getElementById('bookingModalCalendar');
+        
+        title.textContent = config.title;
+        calendar.innerHTML = '';
+        
+        var script = document.createElement('script');
+        script.src = config.src;
+        calendar.appendChild(script);
+        
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeBookingModal() {
+        var modal = document.getElementById('bookingModal');
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        document.getElementById('bookingModalCalendar').innerHTML = '';
+    }
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeBookingModal();
+    });
+    </script>
 </body>
 </html>
