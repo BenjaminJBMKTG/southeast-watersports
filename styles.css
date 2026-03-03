@@ -359,6 +359,14 @@ ul {
 .card-icon {
     font-size: 3rem;
     margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-icon svg {
+    width: 48px;
+    height: 48px;
 }
 
 .card h3 {
