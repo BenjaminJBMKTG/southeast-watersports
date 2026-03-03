@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -22,7 +21,7 @@
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="paddleboarding.html" class="nav-link">Paddleboarding</a></li>
                 <li><a href="kayaking.html" class="nav-link active">Kayaking</a></li>
-                <li><a href="https://fareharbor.com/embeds/book/epiclife/?full-items=yes" class="nav-link btn-primary fareharbor-calendar-overlay">Book Now</a></li>
+                <li><a href="#" class="nav-link btn-primary" onclick="openBookingModal('taster');return false;">Book Now</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
                 <span></span>
@@ -79,13 +78,13 @@
                             <li>Small groups (max 8)</li>
                             <li>Choice of scenic locations</li>
                         </ul>
-                        <a href="https://fareharbor.com/embeds/book/epiclife/?full-items=yes" class="btn btn-primary fareharbor-calendar-overlay">Book Now</a>
+                        <button class="btn btn-primary" onclick="openBookingModal('taster')">Book Now</button>
                     </div>
                 </div>
 
                 <div class="session-card fade-in">
                     <div class="session-image">
-                        <img src="images/sea-kayak.png" alt="Sea kayaking along the coast">
+                        <img src="images/sea-kayak.jpg" alt="Sea kayaking along the coast">
                     </div>
                     <div class="session-content">
                         <h3>Sea Kayaking</h3>
@@ -100,7 +99,7 @@
                             <li>All specialist sea kayaking equipment provided</li>
                             <li>Suitable for ages 12+</li>
                         </ul>
-                        <a href="https://fareharbor.com/embeds/book/epiclife/?full-items=yes" class="btn btn-primary fareharbor-calendar-overlay">Book Now</a>
+                        <button class="btn btn-primary" onclick="openBookingModal('sea-kayak')">Book Now</button>
                     </div>
                 </div>
 
@@ -158,7 +157,7 @@
             <div class="cta-content fade-in">
                 <h2>Start Your Kayaking Adventure</h2>
                 <p>Whether you're a complete beginner or an experienced paddler, we have the perfect session for you.</p>
-                <a href="https://fareharbor.com/embeds/book/epiclife/?full-items=yes" class="btn btn-primary btn-large fareharbor-calendar-overlay">Book Your Kayaking Session</a>
+                <button class="btn btn-primary btn-large" onclick="openBookingModal('taster')">Book Your Kayaking Session</button>
                 <p style="margin-top:18px;font-size:1.05rem;">Or call us: <a href="tel:07377184505" style="color:var(--text-light);font-weight:600;border-bottom:2px solid rgba(255,255,255,0.4);">07377 184505</a></p>
             </div>
         </div>
@@ -178,7 +177,7 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="paddleboarding.html">Paddleboarding</a></li>
                         <li><a href="kayaking.html">Kayaking</a></li>
-                        <li><a href="https://fareharbor.com/embeds/book/epiclife/?full-items=yes" class="fareharbor-calendar-overlay">Book Now</a></li>
+                        <li><a href="#" onclick="openBookingModal('taster');return false;">Book Now</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -196,6 +195,63 @@
         </div>
     </footer>
 
+    <!-- Booking Modal -->
+    <div class="booking-modal" id="bookingModal">
+        <div class="booking-modal-backdrop" onclick="closeBookingModal()"></div>
+        <div class="booking-modal-content">
+            <button class="booking-modal-close" onclick="closeBookingModal()">&times;</button>
+            <h2 class="booking-modal-title" id="bookingModalTitle">Book Your Session</h2>
+            <div class="booking-modal-calendar">
+                <!-- FareHarbor calendars loaded statically so they initialise at page load -->
+                <div id="fh-taster" class="fh-calendar">
+                    <script src="https://fareharbor.com/embeds/script/calendar/epiclife/?fallback=simple&full-items=yes&flow=38485"></script>
+                </div>
+                <div id="fh-sea-kayak" class="fh-calendar">
+                    <script src="https://fareharbor.com/embeds/script/calendar/epiclife/?fallback=simple&full-items=yes&flow=1581608"></script>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
+    <script>
+    var calendarTitles = {
+        'taster':    'Book Taster & Adventure Session',
+        'sea-kayak': 'Book Sea Kayaking'
+    };
+    var calendarIds = {
+        'taster':    'fh-taster',
+        'sea-kayak': 'fh-sea-kayak'
+    };
+
+    function openBookingModal(type) {
+        var key = calendarIds[type] ? type : 'taster';
+
+        document.getElementById('bookingModalTitle').textContent = calendarTitles[key];
+
+        document.querySelectorAll('.fh-calendar').forEach(function(el) {
+            el.style.display = 'none';
+        });
+        document.getElementById(calendarIds[key]).style.display = 'block';
+
+        document.getElementById('bookingModal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeBookingModal() {
+        document.getElementById('bookingModal').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeBookingModal();
+    });
+
+    // Hide all calendars on load; they're revealed when the modal opens
+    document.querySelectorAll('.fh-calendar').forEach(function(el) {
+        el.style.display = 'none';
+    });
+    </script>
+
 </body>
 </html>
