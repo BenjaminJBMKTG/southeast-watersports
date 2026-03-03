@@ -1,568 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Paddleboarding & Kayaking in Kent & Sussex | Epic Life Adventures</title>
-<meta name="description" content="Expert-led paddleboarding and kayaking sessions in beautiful Kent & Sussex locations. From beginners to advanced, find your perfect water adventure.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --blue: #0C5C8F;
-  --blue-dark: #083D5E;
-  --teal: #1A8A7D;
-  --orange: #E8732A;
-  --sand: #F7F3EE;
-  --white: #FFFFFF;
-  --grey-900: #1A1A1A;
-  --grey-600: #555;
-  --grey-400: #999;
-  --radius: 12px;
-}
-html { scroll-behavior: smooth; }
-body { font-family: 'Inter', sans-serif; color: var(--grey-900); line-height: 1.6; }
-img { max-width: 100%; height: auto; display: block; }
-a { text-decoration: none; color: inherit; }
-
-/* ── HERO ── */
-.hero {
-  position: relative;
-  min-height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: var(--white);
-  overflow: hidden;
-}
-.hero-bg {
-  position: absolute; inset: 0;
-  background: url('images/social-paddle.jpg') center/cover no-repeat;
-}
-.hero-bg::after {
-  content: '';
-  position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.6) 100%);
-}
-.hero-content {
-  position: relative; z-index: 1;
-  max-width: 720px;
-  padding: 2rem;
-}
-.hero-badge {
-  display: inline-block;
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.25);
-  padding: 0.4rem 1rem;
-  border-radius: 100px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  margin-bottom: 1.5rem;
-  letter-spacing: 0.03em;
-}
-.hero h1 {
-  font-size: clamp(2.2rem, 5vw, 3.6rem);
-  font-weight: 800;
-  line-height: 1.15;
-  margin-bottom: 1rem;
-}
-.hero p {
-  font-size: 1.15rem;
-  opacity: 0.9;
-  margin-bottom: 2rem;
-  max-width: 540px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.btn {
-  display: inline-block;
-  padding: 0.9rem 2rem;
-  border-radius: 100px;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: all 0.2s;
-  cursor: pointer;
-  border: none;
-}
-.btn-primary { background: var(--orange); color: var(--white); }
-.btn-primary:hover { background: #d4641f; transform: translateY(-1px); }
-.btn-outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.6); margin-left: 0.75rem; }
-.btn-outline:hover { background: rgba(255,255,255,0.1); border-color: var(--white); }
-.hero-btns { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
-
-/* ── TRUST ── */
-.trust {
-  background: var(--blue-dark);
-  color: var(--white);
-  text-align: center;
-  padding: 1rem 1.5rem;
-  font-size: 0.9rem;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-}
-.trust span { opacity: 0.7; margin: 0 0.75rem; }
-
-/* ── SECTIONS ── */
-.section { padding: 5rem 1.5rem; }
-.section-sand { background: var(--sand); }
-.container { max-width: 1100px; margin: 0 auto; }
-.section-header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-.section-header h2 {
-  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
-  font-weight: 800;
-  color: var(--blue-dark);
-  margin-bottom: 0.75rem;
-}
-.section-header p {
-  color: var(--grey-600);
-  max-width: 600px;
-  margin: 0 auto;
-  font-size: 1.05rem;
-}
-
-/* ── ACTIVITY CARDS ── */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-.card {
-  background: var(--white);
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-.card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
-.card-img {
-  height: 220px;
-  overflow: hidden;
-}
-.card-img img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s;
-}
-.card:hover .card-img img { transform: scale(1.05); }
-.card-body { padding: 1.5rem; }
-.card-body h3 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--blue-dark);
-  margin-bottom: 0.5rem;
-}
-.card-body p {
-  color: var(--grey-600);
-  font-size: 0.95rem;
-  margin-bottom: 1rem;
-}
-.card-tag {
-  display: inline-block;
-  background: #E8F4F2;
-  color: var(--teal);
-  font-size: 0.8rem;
-  font-weight: 600;
-  padding: 0.25rem 0.75rem;
-  border-radius: 100px;
-}
-.card-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  color: var(--orange);
-  font-weight: 600;
-  font-size: 0.95rem;
-  margin-top: 0.75rem;
-}
-.card-link:hover { gap: 0.6rem; }
-
-/* ── LOCATIONS ── */
-.locations {
-  display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.loc-pill {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: var(--white);
-  padding: 1rem 1.5rem;
-  border-radius: var(--radius);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  font-weight: 600;
-  color: var(--blue-dark);
-}
-/* ── REVIEWS ── */
-.reviews {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-}
-.review {
-  background: var(--white);
-  border-radius: var(--radius);
-  padding: 1.75rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-  display: flex;
-  flex-direction: column;
-}
-.review-stars {
-  color: #F5A623;
-  font-size: 1.1rem;
-  margin-bottom: 0.75rem;
-  letter-spacing: 2px;
-}
-.review p {
-  color: var(--grey-600);
-  font-size: 0.92rem;
-  line-height: 1.65;
-  flex: 1;
-  font-style: italic;
-}
-.review-author {
-  margin-top: 1rem;
-  font-size: 0.85rem;
-  color: var(--grey-900);
-}
-.review-author span {
-  color: var(--grey-400);
-  margin-left: 0.5rem;
-}
-
-.loc-icon {
-  width: 36px; height: 36px;
-  background: #E8F4F2;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-}
-
-/* ── WHY US ── */
-.features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 2rem;
-  text-align: center;
-}
-.feature-icon {
-  width: 56px; height: 56px;
-  background: var(--sand);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  margin: 0 auto 1rem;
-}
-.feature h3 {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--blue-dark);
-  margin-bottom: 0.4rem;
-}
-.feature p { color: var(--grey-600); font-size: 0.9rem; }
-
-/* ── REVIEWS ── */
-.reviews {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-.review {
-  background: var(--white);
-  border-radius: var(--radius);
-  padding: 1.75rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-}
-.review-stars { color: #F5A623; font-size: 1.1rem; margin-bottom: 0.75rem; letter-spacing: 2px; }
-.review p { color: var(--grey-600); font-size: 0.95rem; font-style: italic; margin-bottom: 1rem; line-height: 1.7; }
-.review-author { font-weight: 600; color: var(--blue-dark); font-size: 0.9rem; }
-.review-source { color: var(--grey-400); font-size: 0.8rem; }
-.ta-link {
-  text-align: center;
-  margin-top: 2rem;
-}
-.ta-link a {
-  color: var(--teal);
-  font-weight: 600;
-  font-size: 0.95rem;
-  border-bottom: 2px solid transparent;
-}
-.ta-link a:hover { border-color: var(--teal); }
-
-/* ── CTA ── */
-.cta-section {
-  background: linear-gradient(135deg, var(--blue) 0%, var(--teal) 100%);
-  color: var(--white);
-  text-align: center;
-  padding: 5rem 1.5rem;
-}
-.cta-section h2 {
-  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
-  font-weight: 800;
-  margin-bottom: 1rem;
-}
-.cta-section p {
-  opacity: 0.9;
-  max-width: 520px;
-  margin: 0 auto 2rem;
-  font-size: 1.05rem;
-}
-.cta-section .btn-primary { background: var(--orange); }
-.cta-section .btn-primary:hover { background: #d4641f; }
-.cta-phone {
-  margin-top: 1.25rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-.cta-phone a { border-bottom: 2px solid rgba(255,255,255,0.4); }
-.cta-phone a:hover { border-color: var(--white); }
-
-/* ── FOOTER ── */
-footer {
-  background: var(--grey-900);
-  color: var(--grey-400);
-  text-align: center;
-  padding: 2rem 1.5rem;
-  font-size: 0.85rem;
-}
-footer a { color: var(--white); }
-
-/* ── MOBILE ── */
-@media (max-width: 640px) {
-  .hero { min-height: 80vh; }
-  .section { padding: 3.5rem 1rem; }
-  .btn-outline { margin-left: 0; }
-  .hero-btns { flex-direction: column; align-items: center; }
-  .hero-btns .btn { width: 100%; max-width: 280px; text-align: center; }
-  .card-img { height: 180px; }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paddleboarding & Kayaking in Kent & Sussex | Epic Life Adventures</title>
+    <meta name="description" content="Expert-led paddleboarding and kayaking sessions in beautiful Kent & Sussex locations. From beginners to advanced, find your perfect water adventure.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"></script>
 </head>
 <body>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <div class="hero-badge">TripAdvisor Travellers' Choice 2021-2025</div>
-    <h1>Paddleboarding & Kayaking Adventures</h1>
-    <p>Expert-led sessions across stunning Kent and Sussex waterways. All levels welcome, from complete beginners to seasoned paddlers.</p>
-    <div class="hero-btns">
-      <a href="#paddleboarding" class="btn btn-primary">Explore Paddleboarding</a>
-      <a href="#kayaking" class="btn btn-outline">Explore Kayaking</a>
-    </div>
-  </div>
-</section>
-
-<!-- TRUST BAR -->
-<div class="trust">
-  Qualified Instructors <span>|</span> All Equipment Provided <span>|</span> Bodiam, Hastings, Tonbridge & Wittersham <span>|</span> 07377 184505
-</div>
-
-<!-- PADDLEBOARDING -->
-<section class="section" id="paddleboarding">
-  <div class="container">
-    <div class="section-header">
-      <h2>Paddleboarding</h2>
-      <p>From your first time on a board to group paddles along beautiful rivers, there's a session for everyone.</p>
-    </div>
-    <div class="cards">
-
-      <div class="card">
-        <div class="card-img"><img src="images/social-paddle.jpg" alt="Social paddle group on the river" loading="lazy"></div>
-        <div class="card-body">
-          <div class="card-tag">Most Popular</div>
-          <h3>Social Paddle</h3>
-          <p>A relaxed group paddle along scenic waterways. Perfect for catching up with friends or meeting fellow paddlers. No experience needed.</p>
-          <a href="https://www.epiclife.co.uk/collections/social-paddle" class="card-link">Book now &rarr;</a>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="https://www.epiclife.co.uk/cdn/shop/files/epiclifelogo_87a1092f-f40f-4914-aac2-3680e66e786f.jpg?v=1690887292&width=440" alt="Epic Life Logo">
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="paddleboarding.html" class="nav-link">Paddleboarding</a></li>
+                <li><a href="kayaking.html" class="nav-link">Kayaking</a></li>
+                <li><a href="https://fareharbor.com/embeds/book/epiclife/?full-items=yes" class="nav-link btn-primary fareharbor-calendar-overlay">Book Now</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-      </div>
+    </nav>
 
-      <div class="card">
-        <div class="card-img"><img src="images/sup-yoga.jpg" alt="SUP Yoga on calm water" loading="lazy"></div>
-        <div class="card-body">
-          <div class="card-tag">Unique Experience</div>
-          <h3>SUP Yoga</h3>
-          <p>Take your yoga practice onto the water. A calming, balance-building session that combines mindfulness with paddleboarding.</p>
-          <a href="https://www.epiclife.co.uk/collections/sup-yoga" class="card-link">Book now &rarr;</a>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-image">
+            <img src="images/mega-sup.webp" alt="Paddleboarding & Kayaking Adventures">
         </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img"><img src="images/mega-sup.webp" alt="Group on a Mega SUP board" loading="lazy"></div>
-        <div class="card-body">
-          <div class="card-tag">Groups & Parties</div>
-          <h3>Mega SUP</h3>
-          <p>Fit the whole crew on one giant board. Ideal for team building, parties, or just a laugh with mates. Teamwork required!</p>
-          <a href="https://fareharbor.com/embeds/book/epiclife/items/239305/?full-items=yes&flow=554777" class="card-link">Book now &rarr;</a>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-badge fade-in">TripAdvisor Travellers' Choice 2021-2025</p>
+            <h1 class="hero-title fade-in">Paddleboarding & Kayaking Adventures</h1>
+            <p class="hero-subtitle fade-in">Expert-led sessions across stunning Kent and Sussex waterways. All levels welcome, from complete beginners to seasoned paddlers.</p>
+            <div class="hero-cta fade-in">
+                <a href="paddleboarding.html" class="btn btn-primary btn-large">Explore Paddleboarding</a>
+                <a href="kayaking.html" class="btn btn-secondary btn-large">Explore Kayaking</a>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div class="card">
-        <div class="card-img"><img src="images/intermediate-sup.jpg" alt="Intermediate paddleboard session" loading="lazy"></div>
-        <div class="card-body">
-          <div class="card-tag">Build Skills</div>
-          <h3>Progression Sessions</h3>
-          <p>Already comfortable on a board? Push your skills further with technique coaching, longer routes, and more challenging conditions.</p>
-          <a href="https://www.epiclife.co.uk/collections/progression-sessions" class="card-link">Book now &rarr;</a>
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+        <div class="container">
+            <div class="trust-items">
+                <span>Qualified Instructors</span>
+                <span class="trust-divider">|</span>
+                <span>All Equipment Provided</span>
+                <span class="trust-divider">|</span>
+                <span>Bodiam, Hastings, Tonbridge & Wittersham</span>
+                <span class="trust-divider">|</span>
+                <span><a href="tel:07377184505">07377 184505</a></span>
+            </div>
         </div>
-      </div>
+    </section>
 
-    </div>
-  </div>
-</section>
-
-<!-- KAYAKING -->
-<section class="section section-sand" id="kayaking">
-  <div class="container">
-    <div class="section-header">
-      <h2>Kayaking</h2>
-      <p>Explore stunning rivers and coastline from the seat of a kayak. Guided sessions for all abilities.</p>
-    </div>
-    <div class="cards">
-
-      <div class="card">
-        <div class="card-img"><img src="images/kayak-hero.jpg" alt="Kayaking on the River Medway" loading="lazy"></div>
-        <div class="card-body">
-          <div class="card-tag">Great Start</div>
-          <h3>River Kayaking</h3>
-          <p>Paddle through the beautiful scenery of the River Medway. Perfect for beginners and families looking for a memorable day out.</p>
-          <a href="https://www.epiclife.co.uk/collections/kayaking" class="card-link">Book now &rarr;</a>
+    <!-- Activities Overview -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Our Activities</h2>
+            <div class="location-cards">
+                <div class="location-card fade-in" onclick="window.location='paddleboarding.html'" style="cursor:pointer">
+                    <div class="location-image">
+                        <img src="images/social-paddle.jpg" alt="Paddleboarding">
+                    </div>
+                    <div class="location-content">
+                        <p class="location-subtitle">4 session types available</p>
+                        <h3>Paddleboarding</h3>
+                        <p>From relaxed social paddles to SUP yoga and mega SUP team experiences. Sessions for all abilities across stunning waterways.</p>
+                    </div>
+                </div>
+                <div class="location-card fade-in" onclick="window.location='kayaking.html'" style="cursor:pointer">
+                    <div class="location-image">
+                        <img src="images/kayak-hero.jpg" alt="Kayaking">
+                    </div>
+                    <div class="location-content">
+                        <p class="location-subtitle">River & sea kayaking</p>
+                        <h3>Kayaking</h3>
+                        <p>Explore historic rivers and the Sussex coastline by kayak. Taster sessions for beginners and sea kayaking for the adventurous.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div class="card">
-        <div class="card-img"><img src="images/kayak-taster.jpg" alt="Kayak taster session on the river" loading="lazy"></div>
-        <div class="card-body">
-          <div class="card-tag">Beginners Welcome</div>
-          <h3>Taster & Adventure</h3>
-          <p>Never kayaked before? Start here. Learn the basics in a fun, supportive environment with all equipment provided.</p>
-          <a href="https://www.epiclife.co.uk/collections/taster-adventure" class="card-link">Book now &rarr;</a>
+    <!-- Why Epic Life -->
+    <section class="section why-section dark-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Why Epic Life?</h2>
+            <div class="cards-grid">
+                <div class="card fade-in">
+                    <div class="card-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgb(108,197,237)" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+                    <h3>Award-Winning</h3>
+                    <p>TripAdvisor Travellers' Choice winner five years running, 2021 to 2025.</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgb(108,197,237)" stroke-width="1.5"><circle cx="12" cy="8" r="5"/><path d="M3 21v-2a7 7 0 0 1 7-7h4a7 7 0 0 1 7 7v2"/></svg></div>
+                    <h3>Expert Instructors</h3>
+                    <p>Fully qualified, passionate instructors who make every session safe and fun.</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgb(108,197,237)" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+                    <h3>All Equipment Included</h3>
+                    <p>Boards, paddles, kayaks, buoyancy aids. Just turn up and we handle the rest.</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgb(108,197,237)" stroke-width="1.5"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="6" r="3"/><circle cx="12" cy="18" r="3"/><path d="M6 21v-4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v4"/></svg></div>
+                    <h3>All Levels Welcome</h3>
+                    <p>Complete beginners to experienced paddlers. We match sessions to your ability.</p>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div class="card">
-        <div class="card-img"><img src="images/sea-kayak.png" alt="Sea kayaking along the coast" loading="lazy"></div>
-        <div class="card-body">
-          <div class="card-tag">Adventure</div>
-          <h3>Sea Kayaking</h3>
-          <p>Take on the open water along the Hastings coastline. Explore sea caves, spot wildlife, and experience the thrill of coastal paddling.</p>
-          <a href="https://www.epiclife.co.uk/collections/sea-kayaking" class="card-link">Book now &rarr;</a>
+    <!-- Testimonials -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">What Our Guests Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial fade-in">
+                    <div class="quote-mark">"</div>
+                    <p>"Big THANK YOU to Teresa (and her husband was a good guy too). My son has additional needs and she was really patient. Gently encouraging him to do the things he could do, never pressuring him, sussing out what accommodations were needed to make it an amazing experience."</p>
+                    <div class="testimonial-author">
+                        <strong>Natalie M</strong>
+                        <span>August 2025 - TripAdvisor</span>
+                    </div>
+                </div>
+                <div class="testimonial fade-in">
+                    <div class="quote-mark">"</div>
+                    <p>"We went along for a coaching session with Julie before taking part in the Race to the Castle. Wow! After just one hour I felt more confident about the race and my paddling technique improved significantly. Thank you Julie and Epic Life. We'll definitely be back."</p>
+                    <div class="testimonial-author">
+                        <strong>Geoffrey M</strong>
+                        <span>March 2025 - TripAdvisor</span>
+                    </div>
+                </div>
+                <div class="testimonial fade-in">
+                    <div class="quote-mark">"</div>
+                    <p>"Julie &amp; her team created a fantastic party experience for our son's birthday. The kids spent the morning laughing on single kayaks, followed by a riot of fun on the giant paddle board. Beautiful location, friendly staff, excellent teaching."</p>
+                    <div class="testimonial-author">
+                        <strong>Lucie W</strong>
+                        <span>May 2025 - TripAdvisor</span>
+                    </div>
+                </div>
+                <div class="testimonial fade-in">
+                    <div class="quote-mark">"</div>
+                    <p>"Great time with a pile of work friends + kids. 2 hrs of kayak hire was perfect amount of time. Great communication and great location. Looking forwards to going again."</p>
+                    <div class="testimonial-author">
+                        <strong>Benjamin G</strong>
+                        <span>April 2025 - TripAdvisor</span>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
 
-    </div>
-  </div>
-</section>
+    <!-- Locations -->
+    <section class="section dark-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Our Locations</h2>
+            <div class="cards-grid">
+                <div class="card fade-in">
+                    <div class="card-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgb(108,197,237)" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                    <h3>Bodiam</h3>
+                    <p>Paddle past the iconic 14th-century Bodiam Castle on the River Rother.</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgb(108,197,237)" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                    <h3>Hastings</h3>
+                    <p>Sea kayaking and coastal paddleboarding along the dramatic Sussex coast.</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgb(108,197,237)" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                    <h3>Tonbridge</h3>
+                    <p>Explore the tranquil River Medway through historic Kent countryside.</p>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgb(108,197,237)" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+                    <h3>Wittersham</h3>
+                    <p>Peaceful paddling through the beautiful marshlands and waterways of Kent.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- REVIEWS -->
-<section class="section" id="reviews">
-  <div class="container">
-    <div class="section-header">
-      <h2>What Our Guests Say</h2>
-      <p>Rated 5 stars on TripAdvisor. Travellers' Choice winner 2021 to 2025.</p>
-    </div>
-    <div class="reviews">
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <h2>Ready for Your Next Adventure?</h2>
+                <p>Book your session today and get out on the water. Spaces fill up fast during summer, so don't wait.</p>
+                <a href="https://fareharbor.com/embeds/book/epiclife/?full-items=yes" class="btn btn-primary btn-large fareharbor-calendar-overlay">Browse All Sessions</a>
+                <p style="margin-top:18px;font-size:1.05rem;">Or call us: <a href="tel:07377184505" style="color:var(--text-light);font-weight:600;border-bottom:2px solid rgba(255,255,255,0.4);">07377 184505</a></p>
+            </div>
+        </div>
+    </section>
 
-      <div class="review">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>"Big THANK YOU to Teresa (and her husband was a good guy too). My son has additional needs and she was really patient. Gently encouraging him to do the things he could do, never pressuring him, sussing out what accommodations were needed to make it an amazing experience."</p>
-        <div class="review-author"><strong>Natalie M</strong> <span>August 2025</span></div>
-      </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="https://www.epiclife.co.uk/cdn/shop/files/epiclifelogo_87a1092f-f40f-4914-aac2-3680e66e786f.jpg?v=1690887292&width=440" alt="Epic Life Logo" class="footer-logo">
+                    <p>Expert-led paddleboarding and kayaking adventures across beautiful Kent and Sussex waterways.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="paddleboarding.html">Paddleboarding</a></li>
+                        <li><a href="kayaking.html">Kayaking</a></li>
+                        <li><a href="https://fareharbor.com/embeds/book/epiclife/?full-items=yes" class="fareharbor-calendar-overlay">Book Now</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:07377184505">07377 184505</a></li>
+                        <li><a href="https://www.epiclife.co.uk">www.epiclife.co.uk</a></li>
+                        <li>Bodiam, Hastings, Tonbridge & Wittersham</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Epic Life Adventures. TripAdvisor Travellers' Choice 2021-2025.</p>
+            </div>
+        </div>
+    </footer>
 
-      <div class="review">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>"We went along for a coaching session with Julie before taking part in the Race to the Castle. Wow! After just one hour I felt more confident about the race and my paddling technique improved significantly. Thank you Julie and Epic Life."</p>
-        <div class="review-author"><strong>Geoffrey M</strong> <span>March 2025</span></div>
-      </div>
-
-      <div class="review">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>"Julie &amp; her team created a fantastic party experience for our son's birthday. The kids spent the morning laughing on single kayaks, followed by a riot of fun on the giant paddle board. Beautiful location, friendly staff, excellent teaching."</p>
-        <div class="review-author"><strong>Lucie W</strong> <span>May 2025</span></div>
-      </div>
-
-      <div class="review">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>"Great time with a pile of work friends + kids. 2 hrs of kayak hire was perfect amount of time. Great communication and great location. Looking forwards to going again."</p>
-        <div class="review-author"><strong>Benjamin G</strong> <span>April 2025</span></div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- LOCATIONS -->
-<section class="section" id="locations">
-  <div class="container">
-    <div class="section-header">
-      <h2>Our Locations</h2>
-      <p>Sessions run across four stunning locations in Kent and East Sussex.</p>
-    </div>
-    <div class="locations">
-      <div class="loc-pill"><div class="loc-icon">&#127966;</div> Bodiam</div>
-      <div class="loc-pill"><div class="loc-icon">&#127754;</div> Hastings</div>
-      <div class="loc-pill"><div class="loc-icon">&#128675;</div> Tonbridge</div>
-      <div class="loc-pill"><div class="loc-icon">&#127795;</div> Wittersham</div>
-    </div>
-  </div>
-</section>
-
-<!-- WHY EPIC LIFE -->
-<section class="section section-sand">
-  <div class="container">
-    <div class="section-header">
-      <h2>Why Epic Life?</h2>
-    </div>
-    <div class="features">
-      <div class="feature">
-        <div class="feature-icon">&#127942;</div>
-        <h3>Award-Winning</h3>
-        <p>TripAdvisor Travellers' Choice winner five years running, 2021 to 2025.</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">&#129341;</div>
-        <h3>Expert Instructors</h3>
-        <p>Fully qualified, passionate instructors who make every session safe and fun.</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">&#127993;</div>
-        <h3>All Equipment Included</h3>
-        <p>Boards, paddles, kayaks, buoyancy aids. Just turn up and we handle the rest.</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">&#128106;</div>
-        <h3>All Levels Welcome</h3>
-        <p>Complete beginners to experienced paddlers. We match sessions to your ability.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-section">
-  <h2>Ready for Your Next Adventure?</h2>
-  <p>Book your session today and get out on the water. Spaces fill up fast during summer, so don't wait.</p>
-  <a href="https://www.epiclife.co.uk/pages/paddleboarding" class="btn btn-primary">Browse All Sessions</a>
-  <div class="cta-phone">Or call us: <a href="tel:07377184505">07377 184505</a></div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <p>&copy; 2026 Epic Life Adventures. Paddleboarding & Kayaking in Kent & East Sussex.</p>
-  <p style="margin-top:0.5rem;"><a href="https://www.epiclife.co.uk">epiclife.co.uk</a></p>
-</footer>
-
+    <script src="script.js"></script>
 </body>
 </html>

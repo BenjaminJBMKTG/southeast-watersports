@@ -284,6 +284,59 @@ ul {
 }
 
 /* ===========================
+   Trust Bar
+   =========================== */
+
+.trust-bar {
+    background-color: var(--dark-navy);
+    color: var(--text-light);
+    padding: 14px 0;
+    text-align: center;
+}
+
+.trust-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.trust-items a {
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+.trust-divider {
+    opacity: 0.4;
+    margin: 0 8px;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    letter-spacing: 0.03em;
+}
+
+@media (max-width: 768px) {
+    .trust-items {
+        font-size: 0.8rem;
+    }
+    .trust-divider {
+        margin: 0 4px;
+    }
+}
+
+/* ===========================
    Buttons
    =========================== */
 
