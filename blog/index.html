@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Southeast Watersports - Paddleboarding & Kayaking in Kent & Sussex</title>
+    <meta name="description" content="Tips, guides, and inspiration for paddleboarding and kayaking in Kent and Sussex. Expert advice from Southeast Watersports.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <img src="https://www.epiclife.co.uk/cdn/shop/files/epiclifelogo_87a1092f-f40f-4914-aac2-3680e66e786f.jpg?v=1690887292&width=440" alt="Southeast Watersports" style="height:48px;">
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="../paddleboarding.html" class="nav-link">Paddleboarding</a></li>
+                <li><a href="../kayaking.html" class="nav-link">Kayaking</a></li>
+                <li><a href="index.html" class="nav-link active">Blog</a></li>
+                <li><a href="https://fareharbor.com/embeds/book/epiclife/?full-items=yes" class="nav-link btn-primary fareharbor-calendar-overlay">Book Now</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section style="padding:100px 24px 60px;max-width:1100px;margin:0 auto;">
+        <div style="text-align:center;margin-bottom:48px;">
+            <h1 style="font-size:clamp(1.75rem,4vw,2.5rem);margin-bottom:12px;">Blog</h1>
+            <p style="font-size:1.1rem;color:#64748b;max-width:600px;margin:0 auto;">Tips, guides, and inspiration for paddleboarding and kayaking across Kent and Sussex.</p>
+        </div>
+
+        <div id="blog-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;">
+        </div>
+    </section>
+
+    <footer style="background:var(--primary, #1a5276);color:#fff;text-align:center;padding:40px 24px;">
+        <p>&copy; 2026 Southeast Watersports. All rights reserved.</p>
+        <p style="margin-top:8px;"><a href="tel:07377184505" style="color:#bee3f8;">07377 184505</a> | <a href="../index.html" style="color:#bee3f8;">southeastwatersports.com</a></p>
+    </footer>
+
+    <script>
+    // Dynamic blog listing - scans blog/ directory for articles
+    const articles = [
+        {
+            title: "Paddleboarding Kent: Your Complete Guide to SUP on Southern England's Best Rivers",
+            url: "paddleboarding-kent.html",
+            date: "March 4, 2026",
+            excerpt: "Everything you need to know about paddleboarding in Kent, from the best rivers and locations to what to bring and how to get started."
+        }
+    ];
+
+    const grid = document.getElementById('blog-grid');
+    articles.forEach(a => {
+        grid.innerHTML += `
+            <a href="${a.url}" style="text-decoration:none;color:inherit;border-radius:12px;overflow:hidden;border:1px solid #e2e8f0;transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;">
+                <div style="padding:24px;flex-grow:1;display:flex;flex-direction:column;">
+                    <div style="font-size:0.8rem;color:#94a3b8;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:8px;">${a.date}</div>
+                    <h2 style="font-size:1.15rem;line-height:1.3;margin:0 0 12px;color:#1e293b;">${a.title}</h2>
+                    <p style="font-size:0.9rem;color:#64748b;line-height:1.6;flex-grow:1;">${a.excerpt}</p>
+                    <span style="font-size:0.85rem;color:var(--primary, #1a5276);margin-top:12px;">Read article &rarr;</span>
+                </div>
+            </a>
+        `;
+    });
+
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    if (hamburger) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    }
+    </script>
+
+    <style>
+    #blog-grid a:hover { transform:translateY(-4px); box-shadow:0 8px 24px rgba(0,0,0,0.08); }
+    @media(max-width:900px) { #blog-grid { grid-template-columns:repeat(2,1fr) !important; gap:24px !important; } }
+    @media(max-width:560px) { #blog-grid { grid-template-columns:1fr !important; gap:20px !important; } }
+    </style>
+</body>
+</html>
