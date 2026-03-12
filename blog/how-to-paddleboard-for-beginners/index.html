@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How to Paddleboard for Beginners: A Complete Guide to Getting Started | Southeast Watersports</title>
     <meta name="description" content="New to paddleboarding? Learn the essentials: what to wear, how to balance, basic techniques, and where to try it in Kent. Perfect for beginners of all ages.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+<script defer src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -13,22 +18,10 @@
             color: #2d3748;
             background: #fff;
         }
-        .nav {
-            background: #1a5276;
-            padding: 16px 24px;
-            text-align: center;
-        }
-        .nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 16px;
-            font-size: 0.95rem;
-        }
-        .nav a:hover { opacity: 0.8; }
         .article-container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 40px 24px 80px;
+            padding: 120px 24px 80px;
         }
         .article-meta {
             font-size: 0.85rem;
@@ -65,7 +58,8 @@
             margin: 28px 0;
             display: block;
         }
-        a { color: #1a5276; text-decoration: underline; text-underline-offset: 3px; }
+        .article-container a { color: #1a5276; text-decoration: underline; text-underline-offset: 3px; }
+        .navbar .nav-link { text-decoration: none; }
         blockquote {
             border-left: 3px solid #1a5276;
             padding-left: 20px;
@@ -109,17 +103,30 @@
         }
         .footer a { color: #bee3f8; }
         @media (max-width: 640px) {
-            .article-container { padding: 24px 16px 60px; }
+            .article-container { padding: 104px 16px 60px; }
         }
     </style>
 </head>
 <body>
-    <nav class="nav">
-        <a href="/">Home</a>
-        <a href="/activities">Activities</a>
-        <a href="/about">About</a>
-        <a href="/blog">Blog</a>
-    </nav>
+    <nav class="navbar navbar-light" id="navbar">
+    <div class="nav-container">
+        <a href="../../index.html" class="nav-logo">
+            <img src="https://www.epiclife.co.uk/cdn/shop/files/epiclifelogo_87a1092f-f40f-4914-aac2-3680e66e786f.jpg?v=1690887292&width=440" alt="Epic Life Logo">
+        </a>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="../../index.html" class="nav-link">Home</a></li>
+            <li><a href="../../paddleboarding/index.html" class="nav-link">Paddleboarding</a></li>
+            <li><a href="../../kayaking/index.html" class="nav-link">Kayaking</a></li>
+            <li><a href="../../blog/index.html" class="nav-link active">Blog</a></li>
+            <li><a href="https://fareharbor.com/embeds/book/epiclife/?full-items=yes" class="nav-link btn-primary fareharbor-calendar-overlay">Book Now</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</nav>
 
     <div class="article-container">
         <div class="article-meta">March 05, 2026</div>
@@ -228,7 +235,7 @@
 </ul>
 <h2 id="ready-to-try-paddleboarding">Ready to Try Paddleboarding?</h2>
 <p>If you fancy giving paddleboarding a go, here's the next step: find a taster session near you. Taster sessions are specifically designed for complete beginners. No experience needed, all equipment provided, and qualified instructors who know how to make paddleboarding feel achievable.</p>
-<p>Check out <a href="https://southeastwatersports.com/activities">our activities page</a> to book a paddleboarding session. We run beginner-friendly sessions at <a href="https://southeastwatersports.com/activities">Bodiam on the River Rother</a>, <a href="https://southeastwatersports.com/activities">Tonbridge on the River Medway</a>, and other lovely spots across Kent and Sussex.</p>
+<p>Check out <a href="../../paddleboarding/index.html">our activities page</a> to book a paddleboarding session. We run beginner-friendly sessions at <a href="../../paddleboarding/index.html">Bodiam on the River Rother</a>, <a href="../../paddleboarding/index.html">Tonbridge on the River Medway</a>, and other lovely spots across Kent and Sussex.</p>
 <p>If you've got questions, give us a ring on <strong>07377 184505</strong> or just show up ready to learn. We promise you'll leave with a big grin.</p>
 <h2 id="what-comes-next">What Comes Next?</h2>
 <p>After your first session, you might fancy:</p>
@@ -241,13 +248,14 @@
 <p>But first things first. Get on a board, learn the basics, and discover why paddleboarding has captured so many people's hearts.</p>
 <p>Fancy a splash in the great outdoors? Paddleboarding might just be your next favourite thing.</p>
         <div class="back-link">
-            <a href="/blog">&larr; Back to all articles</a>
+            <a href="../../blog/index.html">&larr; Back to all articles</a>
         </div>
     </div>
 
     <footer class="footer">
         <p>&copy; 2026 Southeast Watersports. All rights reserved.</p>
-        <p><a href="tel:07377184505">07377 184505</a> | <a href="/">southeastwatersports.com</a></p>
+        <p><a href="tel:07377184505">07377 184505</a> | <a href="../../index.html">southeastwatersports.com</a></p>
     </footer>
+    <script defer src="../../script.js"></script>
 </body>
 </html>

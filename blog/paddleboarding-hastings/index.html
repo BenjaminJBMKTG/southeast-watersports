@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paddleboarding in Hastings: Your Complete Guide to Coastal SUP Adventures | Southeast Watersports</title>
     <meta name="description" content="Discover the best paddleboarding spots in Hastings, from beginner-friendly beaches to scenic river routes. Expert tips, equipment advice, and local insights for your next SUP adventure.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+<script defer src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -13,22 +18,10 @@
             color: #2d3748;
             background: #fff;
         }
-        .nav {
-            background: #1a5276;
-            padding: 16px 24px;
-            text-align: center;
-        }
-        .nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 16px;
-            font-size: 0.95rem;
-        }
-        .nav a:hover { opacity: 0.8; }
         .article-container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 40px 24px 80px;
+            padding: 120px 24px 80px;
         }
         .article-meta {
             font-size: 0.85rem;
@@ -65,7 +58,8 @@
             margin: 28px 0;
             display: block;
         }
-        a { color: #1a5276; text-decoration: underline; text-underline-offset: 3px; }
+        .article-container a { color: #1a5276; text-decoration: underline; text-underline-offset: 3px; }
+        .navbar .nav-link { text-decoration: none; }
         blockquote {
             border-left: 3px solid #1a5276;
             padding-left: 20px;
@@ -109,17 +103,30 @@
         }
         .footer a { color: #bee3f8; }
         @media (max-width: 640px) {
-            .article-container { padding: 24px 16px 60px; }
+            .article-container { padding: 104px 16px 60px; }
         }
     </style>
 </head>
 <body>
-    <nav class="nav">
-        <a href="/">Home</a>
-        <a href="/activities">Activities</a>
-        <a href="/about">About</a>
-        <a href="/blog">Blog</a>
-    </nav>
+    <nav class="navbar navbar-light" id="navbar">
+    <div class="nav-container">
+        <a href="../../index.html" class="nav-logo">
+            <img src="https://www.epiclife.co.uk/cdn/shop/files/epiclifelogo_87a1092f-f40f-4914-aac2-3680e66e786f.jpg?v=1690887292&width=440" alt="Epic Life Logo">
+        </a>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="../../index.html" class="nav-link">Home</a></li>
+            <li><a href="../../paddleboarding/index.html" class="nav-link">Paddleboarding</a></li>
+            <li><a href="../../kayaking/index.html" class="nav-link">Kayaking</a></li>
+            <li><a href="../../blog/index.html" class="nav-link active">Blog</a></li>
+            <li><a href="https://fareharbor.com/embeds/book/epiclife/?full-items=yes" class="nav-link btn-primary fareharbor-calendar-overlay">Book Now</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</nav>
 
     <div class="article-container">
         <div class="article-meta">March 07, 2026</div>
@@ -151,7 +158,7 @@
 <p><strong>Best for:</strong> Complete beginners and families<br />
 <strong>Conditions:</strong> Generally calmer with groynes breaking up wave energy<br />
 <strong>Facilities:</strong> Excellent - cafés, toilets, and easy access to parking</p>
-<p>This is where we run many of our <a href="https://southeastwatersports.com/blog/how-to-paddleboard-for-beginners">beginner paddleboarding sessions</a>. The sandy patches between the groynes make for easier launching than pure shingle, and you can gradually work your way out as your confidence builds.</p>
+<p>This is where we run many of our <a href="../../blog/how-to-paddleboard-for-beginners">beginner paddleboarding sessions</a>. The sandy patches between the groynes make for easier launching than pure shingle, and you can gradually work your way out as your confidence builds.</p>
 <h3 id="st-leonards-beach">St Leonards Beach</h3>
 <p>Stretching west from Hastings into neighbouring St Leonards-on-Sea, this long promenade beach offers miles of paddling opportunities with a more laid-back vibe.</p>
 <p><strong>Best for:</strong> All abilities, especially those wanting longer distance paddles<br />
@@ -174,7 +181,7 @@
 - Bodiam Castle (paddle past this iconic 14th-century castle)
 - Wittersham (peaceful rural section)</p>
 <p>The tidal stretch between Rye and the sea offers easy paddling through diverse habitats. Time your paddle with an incoming tide for an effortless return journey. Further upstream, the stretch near Bodiam Castle is properly bucket-list stuff - paddling past this fairytale castle is an experience you won't forget.</p>
-<p>For more inspiration on river paddling in the region, check out our guide to <a href="https://southeastwatersports.com/blog/paddleboarding-kent">paddleboarding in Kent</a>, which covers similar river systems.</p>
+<p>For more inspiration on river paddling in the region, check out our guide to <a href="../../blog/paddleboarding-kent">paddleboarding in Kent</a>, which covers similar river systems.</p>
 <h3 id="river-brede">River Brede</h3>
 <p>Another tributary of the Rother system, the Brede offers intimate creek paddling through marshland landscapes. It's narrower and more sheltered than the main Rother, perfect when you want something truly tranquil.</p>
 <p><strong>Best for:</strong> Intermediate paddlers comfortable with navigation<br />
@@ -190,7 +197,7 @@
 - Basic turning and control
 - Safety awareness and what to do if you fall in
 - Understanding tides, weather, and local conditions</p>
-<p><a href="https://southeastwatersports.com/blog/stand-up-paddleboarding-sussex-complete-beginners-guide">Stand up paddleboarding in Sussex</a> has become increasingly accessible, with more people discovering the joy of gliding across the water each year.</p>
+<p><a href="../../blog/stand-up-paddleboarding-sussex-complete-beginners-guide">Stand up paddleboarding in Sussex</a> has become increasingly accessible, with more people discovering the joy of gliding across the water each year.</p>
 <p>Most people stand up within their first session, though don't feel discouraged if you prefer to kneel at first. Building confidence on the board is more important than rushing to stand.</p>
 <p><img alt="Beginner learning to paddleboard" src="https://images.unsplash.com/photo-1484821582734-6c6c9f99a672?w=1200&amp;h=800&amp;fit=crop&amp;q=80" /></p>
 <h3 id="equipment-guide-for-hastings-conditions">Equipment Guide for Hastings Conditions</h3>
@@ -260,7 +267,7 @@ Conditions improve as the days lengthen. March can still be chilly, but by May y
 - Small groups ensuring personal attention</p>
 <p>Our instructors know these waters intimately. We'll teach you proper technique, help you understand local conditions, and ensure you have a brilliant (and safe) time on the water.</p>
 <p><strong>Book your paddleboarding adventure:</strong><br />
-Call us on <strong>07377 184505</strong> or visit <a href="https://southeastwatersports.com/activities">our activities page</a> to check availability and book your session.</p>
+Call us on <strong>07377 184505</strong> or visit <a href="../../paddleboarding/index.html">our activities page</a> to check availability and book your session.</p>
 <p>Already experienced? Hire a board from us and explore at your own pace. We'll provide local knowledge and recommendations for the best spots based on current conditions.</p>
 <h2 id="combining-paddleboarding-with-other-activities">Combining Paddleboarding with Other Activities</h2>
 <p>One of the joys of paddleboarding in Hastings is how it complements other adventures in this historic town.</p>
@@ -270,7 +277,7 @@ Call us on <strong>07377 184505</strong> or visit <a href="https://southeastwate
 - Visit the Fishermen's Museum to learn about local maritime heritage
 - Walk the coastal path for a different perspective on the waters you've just paddled
 - Check out the contemporary art scene (Hastings has a thriving creative community)</p>
-<p>If you're keen to expand your watersports skills, <a href="https://southeastwatersports.com/blog/kayaking-in-hastings">kayaking in Hastings</a> offers a different but equally rewarding way to explore the coastline.</p>
+<p>If you're keen to expand your watersports skills, <a href="../../blog/kayaking-in-hastings">kayaking in Hastings</a> offers a different but equally rewarding way to explore the coastline.</p>
 <h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
 <p><strong>Do I need to be fit to try paddleboarding?</strong><br />
 Not especially. Basic fitness helps, but paddleboarding is adaptable to your level. You can paddle gently for relaxation or push hard for a workout. Most people are surprised by how accessible it is.</p>
@@ -290,15 +297,16 @@ Initial lessons and hire are very reasonable. If you want to buy your own equipm
 <p>Ready to start your paddleboarding journey? <strong>Call Southeast Watersports on 07377 184505</strong> to book your first lesson or equipment hire. We'll take care of everything, from teaching you the basics to recommending the best spots for your ability level.</p>
 <p>Don't wait for the perfect conditions - with the right guidance and equipment, almost any day can be a great paddleboarding day in Hastings. We'll see you on the water!</p>
 <hr />
-<p><em>Southeast Watersports is Hastings' trusted provider of paddleboarding lessons, equipment hire, and guided tours. With local knowledge and a passion for getting people on the water safely, we're here to help you discover the joy of stand up paddleboarding. Visit <a href="https://southeastwatersports.com">southeastwatersports.com</a> or call 07377 184505 to learn more.</em></p>
+<p><em>Southeast Watersports is Hastings' trusted provider of paddleboarding lessons, equipment hire, and guided tours. With local knowledge and a passion for getting people on the water safely, we're here to help you discover the joy of stand up paddleboarding. Visit <a href="../../index.html">southeastwatersports.com</a> or call 07377 184505 to learn more.</em></p>
         <div class="back-link">
-            <a href="/blog">&larr; Back to all articles</a>
+            <a href="../../blog/index.html">&larr; Back to all articles</a>
         </div>
     </div>
 
     <footer class="footer">
         <p>&copy; 2026 Southeast Watersports. All rights reserved.</p>
-        <p><a href="tel:07377184505">07377 184505</a> | <a href="/">southeastwatersports.com</a></p>
+        <p><a href="tel:07377184505">07377 184505</a> | <a href="../../index.html">southeastwatersports.com</a></p>
     </footer>
+    <script defer src="../../script.js"></script>
 </body>
 </html>

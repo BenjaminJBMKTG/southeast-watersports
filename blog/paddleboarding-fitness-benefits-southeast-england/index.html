@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paddleboarding for Fitness: Get Fit on the Water in Southeast England | Southeast Watersports</title>
     <meta name="description" content="Discover the fitness benefits of paddleboarding. Learn which muscles you'll work, why SUP is a full-body workout, and how to use paddleboarding to get fit in Kent and Sussex.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+<script defer src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -13,22 +18,10 @@
             color: #2d3748;
             background: #fff;
         }
-        .nav {
-            background: #1a5276;
-            padding: 16px 24px;
-            text-align: center;
-        }
-        .nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 16px;
-            font-size: 0.95rem;
-        }
-        .nav a:hover { opacity: 0.8; }
         .article-container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 40px 24px 80px;
+            padding: 120px 24px 80px;
         }
         .article-meta {
             font-size: 0.85rem;
@@ -65,7 +58,8 @@
             margin: 28px 0;
             display: block;
         }
-        a { color: #1a5276; text-decoration: underline; text-underline-offset: 3px; }
+        .article-container a { color: #1a5276; text-decoration: underline; text-underline-offset: 3px; }
+        .navbar .nav-link { text-decoration: none; }
         blockquote {
             border-left: 3px solid #1a5276;
             padding-left: 20px;
@@ -109,17 +103,30 @@
         }
         .footer a { color: #bee3f8; }
         @media (max-width: 640px) {
-            .article-container { padding: 24px 16px 60px; }
+            .article-container { padding: 104px 16px 60px; }
         }
     </style>
 </head>
 <body>
-    <nav class="nav">
-        <a href="/">Home</a>
-        <a href="/activities">Activities</a>
-        <a href="/about">About</a>
-        <a href="/blog">Blog</a>
-    </nav>
+    <nav class="navbar navbar-light" id="navbar">
+    <div class="nav-container">
+        <a href="../../index.html" class="nav-logo">
+            <img src="https://www.epiclife.co.uk/cdn/shop/files/epiclifelogo_87a1092f-f40f-4914-aac2-3680e66e786f.jpg?v=1690887292&width=440" alt="Epic Life Logo">
+        </a>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="../../index.html" class="nav-link">Home</a></li>
+            <li><a href="../../paddleboarding/index.html" class="nav-link">Paddleboarding</a></li>
+            <li><a href="../../kayaking/index.html" class="nav-link">Kayaking</a></li>
+            <li><a href="../../blog/index.html" class="nav-link active">Blog</a></li>
+            <li><a href="https://fareharbor.com/embeds/book/epiclife/?full-items=yes" class="nav-link btn-primary fareharbor-calendar-overlay">Book Now</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</nav>
 
     <div class="article-container">
         <div class="article-meta">March 08, 2026</div>
@@ -230,19 +237,20 @@
 <h2 id="join-our-fitness-paddleboarding-sessions">Join Our Fitness Paddleboarding Sessions</h2>
 <p>If you're keen on using paddleboarding as your main fitness activity or adding it to your existing routine, Southeast Watersports runs regular paddleboarding sessions across Kent and Sussex specifically suited to different fitness levels.</p>
 <p>Whether you're a complete beginner wanting to get fit, an experienced athlete looking for cross-training, or someone returning to fitness after time away, we've got sessions that suit you.</p>
-<p>Check out our <a href="https://southeastwatersports.com/activities">paddleboarding activities</a> to see current sessions, or ring us on 07377 184505 to discuss what would work best for your fitness goals.</p>
+<p>Check out our <a href="../../paddleboarding/index.html">paddleboarding activities</a> to see current sessions, or ring us on 07377 184505 to discuss what would work best for your fitness goals.</p>
 <p>We're TripAdvisor Travellers' Choice award winners (2021-2025), and we genuinely love helping people discover how brilliant paddleboarding is for fitness.</p>
 <p><strong>Start your paddleboarding fitness journey today.</strong> The water's waiting.</p>
 <hr />
 <p><em>Southeast Watersports offers beginner-friendly paddleboarding sessions across Kent and Sussex. All equipment is provided, and our instructors will help you build technique and fitness regardless of your starting point.</em></p>
         <div class="back-link">
-            <a href="/blog">&larr; Back to all articles</a>
+            <a href="../../blog/index.html">&larr; Back to all articles</a>
         </div>
     </div>
 
     <footer class="footer">
         <p>&copy; 2026 Southeast Watersports. All rights reserved.</p>
-        <p><a href="tel:07377184505">07377 184505</a> | <a href="/">southeastwatersports.com</a></p>
+        <p><a href="tel:07377184505">07377 184505</a> | <a href="../../index.html">southeastwatersports.com</a></p>
     </footer>
+    <script defer src="../../script.js"></script>
 </body>
 </html>
