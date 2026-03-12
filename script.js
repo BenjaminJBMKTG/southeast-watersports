@@ -111,6 +111,99 @@ navLinks.forEach(link => {
 });
 
 // ===========================
+// Reviews Carousel
+// ===========================
+
+const carousel = document.querySelector('[data-carousel]');
+
+if (carousel) {
+    const track = carousel.querySelector('.testimonial-track');
+    const viewport = carousel.querySelector('.testimonial-viewport');
+    const slides = Array.from(track.children);
+    const prevButton = document.querySelector('[data-carousel-prev]');
+    const nextButton = document.querySelector('[data-carousel-next]');
+    const dotsContainer = carousel.querySelector('[data-carousel-dots]');
+    let currentIndex = 0;
+    let slidesPerView = getSlidesPerView();
+    let maxIndex = getMaxIndex();
+
+    function getSlidesPerView() {
+        if (window.innerWidth <= 480) return 1;
+        if (window.innerWidth <= 768) return 2;
+        return 3;
+    }
+
+    function getMaxIndex() {
+        return Math.max(0, slides.length - slidesPerView);
+    }
+
+    function buildDots() {
+        dotsContainer.innerHTML = '';
+
+        for (let index = 0; index <= maxIndex; index += 1) {
+            const dot = document.createElement('button');
+            dot.type = 'button';
+            dot.className = 'testimonial-dot';
+            dot.setAttribute('aria-label', `Go to review set ${index + 1}`);
+            dot.addEventListener('click', () => {
+                currentIndex = index;
+                updateCarousel();
+            });
+            dotsContainer.appendChild(dot);
+        }
+    }
+
+    function updateCarousel() {
+        const slideWidth = slides[0].getBoundingClientRect().width;
+        const trackStyles = window.getComputedStyle(track);
+        const gap = parseFloat(trackStyles.columnGap || trackStyles.gap || '0');
+        const offset = currentIndex * (slideWidth + gap);
+
+        track.style.transform = `translateX(-${offset}px)`;
+
+        const dots = dotsContainer.querySelectorAll('.testimonial-dot');
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+
+        prevButton.disabled = currentIndex === 0;
+        nextButton.disabled = currentIndex === maxIndex;
+        updateViewportHeight();
+    }
+
+    function updateViewportHeight() {
+        const visibleSlides = slides.slice(currentIndex, currentIndex + slidesPerView);
+        const tallestVisibleSlide = visibleSlides.reduce((maxHeight, slide) => {
+            return Math.max(maxHeight, slide.offsetHeight);
+        }, 0);
+
+        viewport.style.height = `${tallestVisibleSlide}px`;
+    }
+
+    function refreshCarousel() {
+        slidesPerView = getSlidesPerView();
+        maxIndex = getMaxIndex();
+        currentIndex = Math.min(currentIndex, maxIndex);
+        buildDots();
+        updateCarousel();
+    }
+
+    prevButton.addEventListener('click', () => {
+        currentIndex = Math.max(0, currentIndex - 1);
+        updateCarousel();
+    });
+
+    nextButton.addEventListener('click', () => {
+        currentIndex = Math.min(maxIndex, currentIndex + 1);
+        updateCarousel();
+    });
+
+    window.addEventListener('resize', refreshCarousel);
+    buildDots();
+    updateCarousel();
+}
+
+// ===========================
 // Preload hero images for better performance
 // ===========================
 

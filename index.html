@@ -15,14 +15,14 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">
+            <a href="/" class="nav-logo">
                 <img src="https://www.epiclife.co.uk/cdn/shop/files/epiclifelogo_87a1092f-f40f-4914-aac2-3680e66e786f.jpg?v=1690887292&width=440" alt="Epic Life Logo">
             </a>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
-                <li><a href="paddleboarding.html" class="nav-link">Paddleboarding</a></li>
-                <li><a href="kayaking.html" class="nav-link">Kayaking</a></li>
-                <li><a href="blog/index.html" class="nav-link">Blog</a></li>
+                <li><a href="/" class="nav-link active">Home</a></li>
+                <li><a href="/paddleboarding/" class="nav-link">Paddleboarding</a></li>
+                <li><a href="/kayaking/" class="nav-link">Kayaking</a></li>
+                <li><a href="/blog/" class="nav-link">Blog</a></li>
                 <li><a href="https://fareharbor.com/embeds/book/epiclife/?full-items=yes" class="nav-link btn-primary fareharbor-calendar-overlay">Book Now</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
@@ -44,8 +44,8 @@
             <h1 class="hero-title fade-in">Paddleboarding & Kayaking Adventures</h1>
             <p class="hero-subtitle fade-in">Expert-led sessions across stunning Kent and Sussex waterways. All levels welcome, from complete beginners to seasoned paddlers.</p>
             <div class="hero-cta fade-in">
-                <a href="paddleboarding.html" class="btn btn-primary btn-large">Explore Paddleboarding</a>
-                <a href="kayaking.html" class="btn btn-secondary btn-large">Explore Kayaking</a>
+                <a href="/paddleboarding/" class="btn btn-primary btn-large">Explore Paddleboarding</a>
+                <a href="/kayaking/" class="btn btn-secondary btn-large">Explore Kayaking</a>
             </div>
         </div>
     </section>
@@ -70,7 +70,7 @@
         <div class="container">
             <h2 class="section-title fade-in">Our Activities</h2>
             <div class="location-cards">
-                <div class="location-card fade-in" onclick="window.location='paddleboarding.html'" style="cursor:pointer">
+                <div class="location-card fade-in" onclick="window.location='/paddleboarding/'" style="cursor:pointer">
                     <div class="location-image">
                         <img src="images/social-paddle.jpg" alt="Paddleboarding">
                     </div>
@@ -80,7 +80,7 @@
                         <p>From relaxed social paddles to SUP yoga and mega SUP team experiences. Sessions for all abilities across stunning waterways.</p>
                     </div>
                 </div>
-                <div class="location-card fade-in" onclick="window.location='kayaking.html'" style="cursor:pointer">
+                <div class="location-card fade-in" onclick="window.location='/kayaking/'" style="cursor:pointer">
                     <div class="location-image">
                         <img src="images/kayak-hero.jpg" alt="Kayaking">
                     </div>
@@ -124,42 +124,140 @@
     </section>
 
     <!-- Testimonials -->
-    <section class="section">
+    <section class="section reviews-section">
         <div class="container">
-            <h2 class="section-title fade-in">What Our Guests Say</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial fade-in">
-                    <div class="quote-mark">"</div>
-                    <p>"Big THANK YOU to Teresa (and her husband was a good guy too). My son has additional needs and she was really patient. Gently encouraging him to do the things he could do, never pressuring him, sussing out what accommodations were needed to make it an amazing experience."</p>
-                    <div class="testimonial-author">
-                        <strong>Natalie M</strong>
-                        <span>August 2025 - TripAdvisor</span>
+            <div class="reviews-header fade-in">
+                <div>
+                    <h2 class="section-title">Reviews</h2>
+                    <p class="reviews-intro">Recent guest feedback from TripAdvisor, from family sessions and hen dos to coaching and kayak hire.</p>
+                </div>
+                <div class="testimonial-controls" aria-label="Review carousel controls">
+                    <button class="testimonial-control prev" type="button" aria-label="Previous reviews" data-carousel-prev>
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                    </button>
+                    <button class="testimonial-control next" type="button" aria-label="Next reviews" data-carousel-next>
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="testimonial-carousel fade-in" data-carousel>
+                <div class="testimonial-viewport">
+                    <div class="testimonial-track">
+                        <article class="testimonial">
+                            <div class="quote-mark">"</div>
+                            <div class="review-stars" aria-hidden="true">★★★★★</div>
+                            <h3>Great instructors. Fun, friendly and knowledgeable.</h3>
+                            <p>"Big THANK YOU to Teresa. My son has additional needs and she was really patient, gently encouraging him and working out the right accommodations to make it an amazing experience."</p>
+                            <div class="testimonial-author">
+                                <strong>Natalie M</strong>
+                                <span>August 2025 - TripAdvisor</span>
+                            </div>
+                        </article>
+                        <article class="testimonial">
+                            <div class="quote-mark">"</div>
+                            <div class="review-stars" aria-hidden="true">★★★★★</div>
+                            <h3>Confidence-boosting coaching</h3>
+                            <p>"We went along for a coaching session with Julie before taking part in the Race to the Castle. After just one hour I felt more confident about the race and my paddling technique improved significantly."</p>
+                            <div class="testimonial-author">
+                                <strong>Geoffrey M</strong>
+                                <span>March 2025 - TripAdvisor</span>
+                            </div>
+                        </article>
+                        <article class="testimonial">
+                            <div class="quote-mark">"</div>
+                            <div class="review-stars" aria-hidden="true">★★★★★</div>
+                            <h3>Birthday party nailed</h3>
+                            <p>"Julie &amp; her team created a fantastic party experience for our son's birthday. The kids spent the morning laughing on single kayaks, followed by a riot of fun on the giant paddle board."</p>
+                            <div class="testimonial-author">
+                                <strong>Lucie W</strong>
+                                <span>May 2025 - TripAdvisor</span>
+                            </div>
+                        </article>
+                        <article class="testimonial">
+                            <div class="quote-mark">"</div>
+                            <div class="review-stars" aria-hidden="true">★★★★★</div>
+                            <h3>Perfect family kayak hire</h3>
+                            <p>"Great time with a pile of work friends + kids. Two hours of kayak hire was the perfect amount of time. Great communication, great location and we'd happily go again."</p>
+                            <div class="testimonial-author">
+                                <strong>Benjamin G</strong>
+                                <span>April 2025 - TripAdvisor</span>
+                            </div>
+                        </article>
+                        <article class="testimonial">
+                            <div class="quote-mark">"</div>
+                            <div class="review-stars" aria-hidden="true">★★★★★</div>
+                            <h3>Teen paddleboard party success</h3>
+                            <p>"My daughter and her friends had a stand up paddleboard party for her 14th birthday at the Tonbridge site. They had a brilliant time with games, crazy challenges and lots of laughter."</p>
+                            <div class="testimonial-author">
+                                <strong>Emily D</strong>
+                                <span>May 2025 - TripAdvisor</span>
+                            </div>
+                        </article>
+                        <article class="testimonial testimonial-with-photo">
+                            <div class="quote-mark">"</div>
+                            <div class="review-stars" aria-hidden="true">★★★★★</div>
+                            <h3>Could not have been better</h3>
+                            <p>"We booked a two-hour structured kayaking lesson at Bodiam for our grandchildren and every one of us loved it. Teresa was engaging, instructive, fun and safety-aware. We simply couldn't have wished for a better experience."</p>
+                            <img src="images/reviews/trevor-s-review.jpg" alt="Kayaking review photo from Trevor S" class="testimonial-photo" loading="lazy">
+                            <div class="testimonial-author">
+                                <strong>Trevor S</strong>
+                                <span>August 2025 - TripAdvisor</span>
+                            </div>
+                        </article>
+                        <article class="testimonial">
+                            <div class="quote-mark">"</div>
+                            <div class="review-stars" aria-hidden="true">★★★★★</div>
+                            <h3>Hen do favourite</h3>
+                            <p>"We did paddle boarding for my friend's hen do and all 12 of us absolutely loved it. Julie and Lisa were so friendly and patient, and the games on the boards made it even more fun."</p>
+                            <div class="testimonial-author">
+                                <strong>lottie180</strong>
+                                <span>June 2025 - TripAdvisor</span>
+                            </div>
+                        </article>
+                        <article class="testimonial">
+                            <div class="quote-mark">"</div>
+                            <div class="review-stars" aria-hidden="true">★★★★★</div>
+                            <h3>Sunshine, castle views and confidence</h3>
+                            <p>"Fantastic time kayaking at Bodiam with Epic Life. We hired a single and a tandem kayak and I was totally reassured by Julie. Brilliant experience, paddling past the castle in beautiful sunshine."</p>
+                            <div class="testimonial-author">
+                                <strong>Wendy G</strong>
+                                <span>April 2025 - TripAdvisor</span>
+                            </div>
+                        </article>
+                        <article class="testimonial">
+                            <div class="quote-mark">"</div>
+                            <div class="review-stars" aria-hidden="true">★★★★★</div>
+                            <h3>The best paddle boarding experience</h3>
+                            <p>"Absolutely amazing. My instructor was the best and I loved every second. If you want to give it a go, Epic Life is the place to go. I can't wait for next week."</p>
+                            <div class="testimonial-author">
+                                <strong>Steffanie S</strong>
+                                <span>July 2025 - TripAdvisor</span>
+                            </div>
+                        </article>
+                        <article class="testimonial">
+                            <div class="quote-mark">"</div>
+                            <div class="review-stars" aria-hidden="true">★★★★★</div>
+                            <h3>EPIC kids club!</h3>
+                            <p>"Our kids had the best time at the Epic Life Holiday Club at Bodiam. They loved both the forest and river activities and can't wait until next time."</p>
+                            <div class="testimonial-author">
+                                <strong>Rachael P</strong>
+                                <span>September 2025 - TripAdvisor</span>
+                            </div>
+                        </article>
+                        <article class="testimonial testimonial-with-photo">
+                            <div class="quote-mark">"</div>
+                            <div class="review-stars" aria-hidden="true">★★★★★</div>
+                            <h3>Fabulous experience</h3>
+                            <p>"Enjoyed the kayaking and the view was amazing. A really relaxing experience, and Julia was so friendly. Highly recommended."</p>
+                            <img src="images/reviews/joel-nelson-review.jpg" alt="Kayaking review photo from Joel Nelson" class="testimonial-photo" loading="lazy">
+                            <div class="testimonial-author">
+                                <strong>Joel Nelson</strong>
+                                <span>June 2025 - TripAdvisor</span>
+                            </div>
+                        </article>
                     </div>
                 </div>
-                <div class="testimonial fade-in">
-                    <div class="quote-mark">"</div>
-                    <p>"We went along for a coaching session with Julie before taking part in the Race to the Castle. Wow! After just one hour I felt more confident about the race and my paddling technique improved significantly. Thank you Julie and Epic Life. We'll definitely be back."</p>
-                    <div class="testimonial-author">
-                        <strong>Geoffrey M</strong>
-                        <span>March 2025 - TripAdvisor</span>
-                    </div>
-                </div>
-                <div class="testimonial fade-in">
-                    <div class="quote-mark">"</div>
-                    <p>"Julie &amp; her team created a fantastic party experience for our son's birthday. The kids spent the morning laughing on single kayaks, followed by a riot of fun on the giant paddle board. Beautiful location, friendly staff, excellent teaching."</p>
-                    <div class="testimonial-author">
-                        <strong>Lucie W</strong>
-                        <span>May 2025 - TripAdvisor</span>
-                    </div>
-                </div>
-                <div class="testimonial fade-in">
-                    <div class="quote-mark">"</div>
-                    <p>"Great time with a pile of work friends + kids. 2 hrs of kayak hire was perfect amount of time. Great communication and great location. Looking forwards to going again."</p>
-                    <div class="testimonial-author">
-                        <strong>Benjamin G</strong>
-                        <span>April 2025 - TripAdvisor</span>
-                    </div>
-                </div>
+                <div class="testimonial-dots" data-carousel-dots aria-label="Review carousel pagination"></div>
             </div>
         </div>
     </section>
@@ -216,9 +314,9 @@
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="paddleboarding.html">Paddleboarding</a></li>
-                        <li><a href="kayaking.html">Kayaking</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/paddleboarding/">Paddleboarding</a></li>
+                        <li><a href="/kayaking/">Kayaking</a></li>
                         <li><a href="https://fareharbor.com/embeds/book/epiclife/?full-items=yes" class="fareharbor-calendar-overlay">Book Now</a></li>
                     </ul>
                 </div>
